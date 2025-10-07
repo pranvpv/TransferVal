@@ -116,7 +116,8 @@ plt.show()
 
 ```
 
-![Alt text]()
+![Alt text](https://github.com/pranvpv/TransferVal/blob/main/Graphs/Screenshot%202025-10-08%20011758.png)
+![Alt text](https://github.com/pranvpv/TransferVal/blob/main/Graphs/Screenshot%202025-10-08%20011815.png)
 
 ---
 
@@ -146,6 +147,8 @@ y = df_encoded["Market_Value_Million_EUR"]
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42 )
 ```
+![Alt text](https://github.com/pranvpv/TransferVal/blob/main/Graphs/Screenshot%202025-10-08%20012837.png)
+
 ---
 
 ##  Key Insights  
@@ -184,5 +187,4 @@ Potential enhancements include:
 It demonstrates practical skills in **data engineering, model development, and sports analytics**, achieving **53 % prediction accuracy** while uncovering key factors influencing player valuation across Europe’s top leagues.
 
 ---
-⚽ Exploring the intersection of sports and data intelligence  
 
