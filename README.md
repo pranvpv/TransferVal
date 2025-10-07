@@ -158,7 +158,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 - **Expected Goals (xG)** and **Expected Assists (xAG)** were the **most influential features** driving player valuation.  
 - Player **age**, **position**, and **performance metrics** significantly affect market value.  
 - Data-driven models can offer a quantitative view of how player performance translates into financial worth.
-
+![Alt text](https://github.com/pranvpv/TransferVal/blob/main/Graphs/Screenshot%202025-10-08%20015919.png)
 ---
 
 ##  Tech Stack  
