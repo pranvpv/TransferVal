@@ -1,2 +1,120 @@
-# TransferVal
-Transfer Val is a machine learning project that predicts the market value of football players across Europe’s top leagues — Premier League, La Liga, Serie A, Bundesliga, and Ligue 1 — using attributes like age, position, rating, and performance to provide data-driven insights into player valuation.
+# ⚽ Transfer Val — Football Player Market Value Prediction  
+##  Overview  
+
+**Transfer Val** is a machine learning project that predicts and analyzes the market value of professional football players from **Europe’s Top 5 Leagues** — the Premier League, La Liga, Serie A, Bundesliga, and Ligue 1.  
+
+The project combines **data science and football analytics** to understand what influences a player’s market value. Using attributes such as age, position, performance metrics, and reputation, Transfer Val provides data-driven insights into player valuation and the financial dynamics of modern football.
+
+---
+
+##  Data Collection  
+
+The dataset was built using a combination of **web scraping** and **open-source data**.  
+
+- **Premier League Data:** Player statistics were gathered by scraping the official Premier League API using Python libraries such as *BeautifulSoup*, *cloudscraper*, and *requests*. The data included player names, clubs, countries, positions, goals, and assists for the 2024 season.  
+- **Other Leagues Data:** Information for La Liga, Serie A, Bundesliga, and Ligue 1 players was sourced from **Kaggle**, containing detailed attributes on performance, defense, passing, possession, and overall ratings.  
+
+This blend of live and public data created a comprehensive dataset representing Europe’s elite competitions.
+
+---
+
+##  Web Scraping Process  
+
+The Premier League data was extracted through automated scraping of structured JSON endpoints. Each iteration collected player statistics and appended them to a clean dataset, later saved as a CSV file for integration with Kaggle data.  
+
+This ensured **real-time, authentic player information**, capturing live performance metrics such as goals, assists, club affiliation, and position.
+
+---
+
+##  Data Cleaning & Preparation  
+
+Extensive preprocessing steps were applied to ensure data quality:  
+- Removed unnecessary columns such as player rank and redundant identifiers.  
+- Filtered out rows with missing market-value data.  
+- Dropped columns containing more than 70 % missing values.  
+- Distinguished and formatted categorical and numerical features for later modeling.  
+- Standardized data types and column structures for compatibility.  
+
+These steps produced a clean, consistent dataset ready for feature engineering and model training.
+
+---
+
+##  Feature Engineering  
+
+Categorical variables were converted into numeric form, and numerical attributes were standardized.  
+Features such as position, age, goals, assists, expected goals (xG), expected assists (xAG), and progressive metrics were retained, resulting in a well-structured feature matrix suitable for predictive modeling.
+
+---
+
+##  Model Building & Training  
+
+The dataset was split into **training (80 %)** and **testing (20 %)** sets, maintaining balanced representation across leagues and positions.  
+Missing numerical values were imputed using statistical methods to ensure completeness.  
+
+A **Linear Regression** model was trained as the baseline predictor for *Market Value (M €)* and evaluated using RMSE, MAE, and R² scores to measure its accuracy and explanatory power.
+
+---
+
+##  Exploratory Data Analysis (EDA)  
+
+Comprehensive analysis and visualization were conducted to understand the relationships between variables:  
+- **Position Analysis:** Forwards and attacking midfielders generally exhibit higher market values.  
+- **Age Trend:** Player valuation peaks between ages 24 and 29, aligning with prime career years.  
+- **Performance Correlation:** Goals, assists, and xG/xAG metrics show strong positive correlation with value.  
+- **League Comparison:** Premier League players, on average, hold the highest market values among all five leagues.  
+
+These findings validated feature selection and guided modeling decisions.
+
+---
+
+##  Model Evaluation  
+
+Model performance was assessed through:  
+- **RMSE (Root Mean Squared Error)** – overall prediction accuracy  
+- **MAE (Mean Absolute Error)** – average deviation from actual market values  
+- **R² Score** – proportion of variance explained by the model  
+
+The model achieved an **accuracy of approximately 53 %**, showing strong correlation between predicted and actual market values.  
+
+This baseline model successfully captured key patterns in player valuation using simple linear regression.
+
+---
+
+##  Key Insights  
+
+- **Premier League** players were found to be the most highly valued among all leagues.  
+- **Forwards** held the highest market value on average, followed by attacking midfielders.  
+- **Expected Goals (xG)** and **Expected Assists (xAG)** were the **most influential features** driving player valuation.  
+- Player **age**, **position**, and **performance metrics** significantly affect market value.  
+- Data-driven models can offer a quantitative view of how player performance translates into financial worth.
+
+---
+
+##  Future Improvements  
+
+Potential enhancements include:  
+- Using advanced models such as **Random Forest**, **XGBoost**, or **Neural Networks** for higher accuracy.  
+- Conducting **feature-importance** or **SHAP** analyses for interpretability.  
+- Deploying the model via **FastAPI** for real-time predictions.  
+- Developing an interactive **dashboard** using Streamlit or Plotly Dash for visualization and comparison.  
+
+---
+
+##  Tech Stack  
+
+- **Programming:** Python  
+- **Libraries:** pandas • NumPy • scikit-learn • Matplotlib • Seaborn  
+- **Web Scraping:** BeautifulSoup • requests • cloudscraper  
+- **Visualization & Analysis:** Jupyter Notebook  
+- **Deployment (optional):** FastAPI  
+
+---
+
+##  Summary  
+
+**Transfer Val** is an end-to-end data-science project integrating data collection, web scraping, preprocessing, exploratory analysis, and machine learning to predict football player market values.  
+It demonstrates practical skills in **data engineering, model development, and sports analytics**, achieving **53 % prediction accuracy** while uncovering key factors influencing player valuation across Europe’s top leagues.
+
+---
+⚽ Exploring the intersection of sports and data intelligence  
+
