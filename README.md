@@ -1,4 +1,4 @@
-# ⚽ Transfer Val — Football Player Market Value Prediction  
+#  Transfer Val — Football Player Market Value Prediction  
 ##  Overview  
 
 **Transfer Val** is a machine learning project that predicts and analyzes the market value of professional football players from **Europe’s Top 5 Leagues** — the Premier League, La Liga, Serie A, Bundesliga, and Ligue 1.  
@@ -158,16 +158,6 @@ X_train, X_test, y_train, y_test = train_test_split(
 - **Expected Goals (xG)** and **Expected Assists (xAG)** were the **most influential features** driving player valuation.  
 - Player **age**, **position**, and **performance metrics** significantly affect market value.  
 - Data-driven models can offer a quantitative view of how player performance translates into financial worth.
-
----
-
-##  Future Improvements  
-
-Potential enhancements include:  
-- Using advanced models such as **Random Forest**, **XGBoost**, or **Neural Networks** for higher accuracy.  
-- Conducting **feature-importance** or **SHAP** analyses for interpretability.  
-- Deploying the model via **FastAPI** for real-time predictions.  
-- Developing an interactive **dashboard** using Streamlit or Plotly Dash for visualization and comparison.  
 
 ---
 
