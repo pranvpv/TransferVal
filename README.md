@@ -80,7 +80,7 @@ Features such as position, age, goals, assists, expected goals (xG), expected as
 The dataset was split into **training (80 %)** and **testing (20 %)** sets, maintaining balanced representation across leagues and positions.  
 Missing numerical values were imputed using statistical methods to ensure completeness.  
 
-A **Linear Regression** model was trained as the baseline predictor for *Market Value (M €)* and evaluated using RMSE, MAE, and R² scores to measure its accuracy and explanatory power.
+A **RandomForestRegressor** model was trained as the baseline predictor for *Market Value (M €)* and evaluated using RMSE, MAE, and R² scores to measure its accuracy and explanatory power.
 
 ---
 
@@ -128,24 +128,31 @@ Model performance was assessed through:
 - **MAE (Mean Absolute Error)** – average deviation from actual market values  
 - **R² Score** – proportion of variance explained by the model  
 
-The model achieved an **accuracy of approximately 53 %**, showing strong correlation between predicted and actual market values.  
+The model achieved an **accuracy of approximately 60.3 %**, showing strong correlation between predicted and actual market values.  
 
-This baseline model successfully captured key patterns in player valuation using simple linear regression.
+This baseline model successfully captured key patterns in player valuation using RandomForestRegressor.
 
 ```python
-categorical_cols = df_clean.select_dtypes(include=["object"]).columns.tolist()
-numeric_cols = df_clean.select_dtypes(include=["int64", "float64"]).columns.tolist()
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+from sklearn.impute import SimpleImputer
+import numpy as np
 
-# One-hot encode categorical variables
-df_encoded = pd.get_dummies(df_clean, columns=categorical_cols, drop_first=True)
+# Convert all column names to strings
+X_train.columns = X_train.columns.astype(str)
+X_test.columns = X_test.columns.astype(str)
 
-# Define features (X) and target (y)
-X = df_encoded.drop(columns=["Market_Value_Million_EUR"])
-y = df_encoded["Market_Value_Million_EUR"]
+# Impute missing values with the mean
+imputer = SimpleImputer(strategy='mean')
+X_train_imputed = imputer.fit_transform(X_train)
+X_test_imputed = imputer.transform(X_test)
 
-# Train/test split
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42 )
+rf_model = RandomForestRegressor(
+    n_estimators=100,  
+    random_state=42,   
+    max_depth=None      
+)
 ```
 ![Alt text](https://github.com/pranvpv/TransferVal/blob/main/Graphs/Screenshot%202025-10-08%20012837.png)
 
@@ -174,7 +181,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 ##  Summary  
 
 **Transfer Val** is an end-to-end data-science project integrating data collection, web scraping, preprocessing, exploratory analysis, and machine learning to predict football player market values.  
-It demonstrates practical skills in **data engineering, model development, and sports analytics**, achieving **53 % prediction accuracy** while uncovering key factors influencing player valuation across Europe’s top leagues.
+It demonstrates practical skills in **data engineering, model development, and sports analytics**, achieving **60.3 % prediction accuracy** while uncovering key factors influencing player valuation across Europe’s top leagues.
 
 ---
 
