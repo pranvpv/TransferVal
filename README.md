@@ -154,7 +154,7 @@ rf_model = RandomForestRegressor(
     max_depth=None      
 )
 ```
-![Alt text](https://github.com/pranvpv/TransferVal/blob/main/Graphs/Screenshot%202025-10-08%20012837.png)
+![Alt text](https://github.com/pranvpv/TransferVal/blob/main/Graphs/Screenshot%202025-10-08%20223657.png)
 
 ---
 
